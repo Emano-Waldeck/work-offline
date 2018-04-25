@@ -1,0 +1,41 @@
+{
+  "manifest_version": 2,
+  "version": "0.1.0",
+  "name": "Work Offline",
+  "description": "extension description",
+
+  "icons": {
+    "16": "data/icons/16.png",
+    "32": "data/icons/32.png",
+    "48": "data/icons/48.png",
+    "64": "data/icons/64.png",
+    "128": "data/icons/128.png"
+  },
+
+  "homepage_url": "http://add0n.com/index.html",
+
+  "permissions": [
+    "storage",
+    "webRequest",
+    "webRequestBlocking",
+    "*://*/*"
+  ],
+
+  "background": {
+    "scripts": [
+      "webext/utils/EventEmitter.js",
+      "webext/core/base.js",
+      "webext/core/chrome.storage.js",
+      "webext/core/chrome.browserAction.js",
+      "background.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "data/icons/16.png",
+      "32": "data/icons/32.png",
+      "48": "data/icons/48.png",
+      "64": "data/icons/64.png"
+    }
+  }
+}
