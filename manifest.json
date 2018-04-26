@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "name": "Work Offline",
-  "description": "extension description",
+  "description": "Brings work offline and online in the web page level to your browser",
 
   "icons": {
     "16": "data/icons/16.png",
@@ -12,7 +12,7 @@
     "128": "data/icons/128.png"
   },
 
-  "homepage_url": "http://add0n.com/index.html",
+  "homepage_url": "http://add0n.com/work-offline.html",
 
   "permissions": [
     "storage",
@@ -27,6 +27,8 @@
       "webext/core/base.js",
       "webext/core/chrome.storage.js",
       "webext/core/chrome.browserAction.js",
+      "webext/core/chrome.runtime.js",
+      "webext/core/chrome.tabs.js",
       "background.js"
     ]
   },
@@ -36,6 +38,12 @@
       "32": "data/icons/32.png",
       "48": "data/icons/48.png",
       "64": "data/icons/64.png"
+    }
+  },
+  "applications": {
+    "gecko": {
+      "id": " {2936ba13-a63a-41cf-a4e5-79274a38379e}",
+      "strict_min_version": "52.0"
     }
   }
 }
