@@ -63,15 +63,29 @@
         font-size: 90%;
         cursor: pointer;
       }
+      body[data-mode=global] [data-cmd=switch-online] {
+        display: none;
+      }
+      body[data-mode=per-tab] [data-cmd=go-online] {
+        display: none;
+      }
+      body[data-mode=per-tab] #global {
+        display: none;
+      }
+      body[data-mode=global] #per-tab {
+        display: none;
+      }
     </style>
   </head>
   <body vbox pack=center align=center>
     <div>
       <div vbox align=start>
         <h2>Offline mode</h2>
-        Your browser is currently in offline mode and can’t browse the Web. Press "Go Online" to switch to online mode or press "Try Again" to reload the page.
+        <span id="global">Your browser is currently in offline mode and can’t browse the Web. Press "Go Online" button to switch to online mode or press "Try Again" to reload the page.</span>
+        <span id="per-tab">This tab is currently in offline mode and can’t browse the Web. Press "Go Online (this tab)" button to switch to online mode or press "Try Again" to reload the page.</span>
       </div>
       <div hbox align=end pack=end id="tools">
+        <input type="button" data-cmd="switch-online" value="Go Online (this tab)">
         <input type="button" data-cmd="go-online" value="Go Online">
         <input type="button" data-cmd="retry" value="Try Again">
       </div>

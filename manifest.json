@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "version": "0.1.1",
+  "version": "0.1.2",
   "name": "Work Offline",
   "description": "Brings work offline and online in the web page level to your browser",
 
@@ -18,6 +18,7 @@
     "storage",
     "webRequest",
     "webRequestBlocking",
+    "contextMenus",
     "*://*/*"
   ],
 
@@ -26,6 +27,7 @@
       "webext/utils/EventEmitter.js",
       "webext/core/base.js",
       "webext/core/chrome.storage.js",
+      "webext/core/chrome.contextMenus.js",
       "webext/core/chrome.browserAction.js",
       "webext/core/chrome.runtime.js",
       "webext/core/chrome.tabs.js",
@@ -42,7 +44,7 @@
   },
   "applications": {
     "gecko": {
-      "id": " {2936ba13-a63a-41cf-a4e5-79274a38379e}",
+      "id": "{2936ba13-a63a-41cf-a4e5-79274a38379e}",
       "strict_min_version": "52.0"
     }
   }
