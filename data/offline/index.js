@@ -1,12 +1,12 @@
 'use strict';
 
-var args = new URLSearchParams(location.search);
+const args = new URLSearchParams(location.search);
 
 if (args.get('mode') === 'per-tab') {
   document.title += ' (per-tab mode)';
 }
 
-var release = () => {
+const release = () => {
   localStorage.removeItem(args.get('id'));
   location.replace(args.get('rd'));
 };
@@ -31,7 +31,10 @@ document.addEventListener('click', ({target}) => {
 
 document.body.dataset.mode = args.get('mode');
 chrome.storage.onChanged.addListener(prefs => {
-  document.body.dataset.mode = prefs.enabled.newValue ? 'global' : args.get('mode');
+  if (prefs.enabled) {
+    const bol = prefs.enabled.newValue;
+    document.body.dataset.mode = bol ? 'global' : 'per-tab';
+  }
 });
 
 // save to session restore
