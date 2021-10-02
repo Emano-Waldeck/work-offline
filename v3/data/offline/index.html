@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Offline mode</title>
+    <style type="text/css">
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue",Helvetica,sans-serif;
+        font-size: 13px;
+        background-image: url(plug.svg);
+        background-position: right bottom;
+        background-repeat: no-repeat;
+        background-size: 128px;
+        background-color: #f9f9fa;
+      }
+      h2 {
+        font-weight: normal;
+        font-size: 250%;
+        margin: 0;
+        margin-bottom: 30px;
+      }
+      body>div {
+        max-width: 600px;
+        line-height: 22px;
+      }
+      #tools {
+        padding-top: 30px;
+      }
+      [hbox] {
+        display: flex;
+      }
+      [vbox] {
+        display: flex;
+        flex-direction: column;
+      }
+      [pack=center] {
+        justify-content: center;
+      }
+      [pack=end] {
+        justify-content: flex-end;
+      }
+      [align=center] {
+        align-items: center;
+      }
+      [align=start] {
+        align-items: flex-start;
+      }
+      [align=end] {
+        align-items: flex-end;
+      }
+      input {
+        padding: 8px 20px;
+        background-color: #0a84ff;
+        border-radius: 3px;
+        border: none;
+        color: #fff;
+        margin-left: 5px;
+        font-size: 90%;
+        cursor: pointer;
+      }
+      body[data-mode=global] [data-cmd=switch-online] {
+        display: none;
+      }
+      body[data-mode=per-tab] [data-cmd=go-online] {
+        display: none;
+      }
+      body[data-mode=per-tab] #global {
+        display: none;
+      }
+      body[data-mode=global] #per-tab {
+        display: none;
+      }
+    </style>
+  </head>
+  <body vbox pack=center align=center>
+    <div>
+      <div vbox align=start>
+        <h2>Offline mode</h2>
+        <span id="global">Your browser is currently in offline mode and can’t browse the Web. Press "Go Online" button to switch to online mode or press "Try Again" to reload the page.</span>
+        <span id="per-tab">This tab is currently in offline mode and can’t browse the Web. Press "Go Online (this tab)" button to switch to online mode or press "Try Again" to reload the page.</span>
+      </div>
+      <div hbox align=end pack=end id="tools">
+        <input type="button" data-cmd="switch-online" value="Go Online (this tab)">
+        <input type="button" data-cmd="go-online" value="Go Online">
+        <input type="button" data-cmd="retry" value="Try Again">
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

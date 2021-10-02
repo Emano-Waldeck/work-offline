@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "version": "0.2.0",
+  "name": "Work Offline",
+  "description": "Brings work offline and online in the web page level to your browser",
+  "icons": {
+    "16": "data/icons/16.png",
+    "32": "data/icons/32.png",
+    "48": "data/icons/48.png",
+    "64": "data/icons/64.png",
+    "128": "data/icons/128.png"
+  },
+  "homepage_url": "https://add0n.com/work-offline.html",
+  "permissions": [
+    "storage",
+    "contextMenus",
+    "notifications",
+    "declarativeNetRequest",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "background": {
+    "service_worker": "worker.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "data/icons/disabled/16.png",
+      "32": "data/icons/disabled/32.png",
+      "48": "data/icons/disabled/48.png"
+    }
+  },
+  "commands": {
+    "_execute_action": {
+      "description": "Press the action button"
+    },
+    "toggle.offline": {
+      "description": "Toggle Offline Mode for This Tab"
+    }
+  },
+  "web_accessible_resources": [{
+    "resources": [
+      "/data/offline/index.html"
+    ],
+    "matches": ["*://*/*"]
+  }]
+}
